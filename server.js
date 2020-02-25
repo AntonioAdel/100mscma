@@ -44,7 +44,7 @@ AddressAPIS(app)
 
 // awl api or awl endpoint
 app.get("/", (req, resp) => {
-  resp.send("server is running tonton...");
+  resp.send("server is running tonton hi...");
 });
 
 app.get("/user", (req, resp) => {
