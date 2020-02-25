@@ -62,5 +62,7 @@ app.get("/users", (req, resp) => {
   ]);
 });
 
+
+app.listen(process.env.PORT); // create node server
 app.listen(process.env.PORT||3000); // create node server
 //app.listen(3000); // create node server
