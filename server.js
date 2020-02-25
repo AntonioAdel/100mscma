@@ -30,7 +30,7 @@ app.use(express.json())
 
 // db connection
 //mongoose.connect("mongodb://admnin:admin123@ds239071.mlab.com:39071/mscmadb", { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connect("mongodb+srv://Antonio:AntonioAdmin@cluster0-hy8tw.mongodb.net/100mscma?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://Antonio:AntonioAdmin@cluster0-hy8tw.mongodb.net/100mscma?retryWrites=true&w=majority", { useNewUrlParser: true,})// useUnifiedTopology: true })
 
 
 //mongoose.connect("mongodb://localhost:27017/100mscmadb",{ useNewUrlParser: true, useUnifiedTopology: true })
