@@ -1,0 +1,163 @@
+{
+    {
+        "name": "Alexandria", 
+	    "phase":1
+        
+    }, 
+
+    {
+        "name": "Port Said",
+	    "phase":1  
+    }, 
+
+
+    {
+        "name": "Al Buhira", 
+	    "phase":1      
+    }, 
+
+    {
+        "name": "Damietta",
+	    "phase":1       
+    }, 
+
+    {
+        "name": "Marsa Matrouh", 
+	    "phase":1      
+    }, 
+
+    {
+        "name": "South Sainai", 
+     	"phase":1 
+    }, 
+
+
+    {
+        "name": "Al Faioum", 
+     	"phase":1 
+    }, 
+
+
+    {
+        "name": "Asyut", 
+     	"phase":1 
+    }, 
+
+
+
+
+
+
+
+
+    {
+        "name": "North Sainai", 
+     	"phase":2 
+    }, 
+
+
+
+    {
+        "name": "Red Sea", 
+     	"phase":2          	
+    }, 
+
+
+    {
+        "name": "Cairo", 
+     	"phase":2     
+    }, 
+
+
+    {
+        "name": "Asmailia", 
+     	"phase":2     
+    }, 
+
+
+    {
+        "name": "Suez", 
+     	"phase":2        
+    }, 
+
+
+    {
+        "name": "Kafr El Shaikh", 
+     	"phase":2     
+    }, 
+
+
+    {
+        "name": "Mnoufia", 
+     	"phase":2     
+    }, 
+
+    {
+        "name": "Bani Swaif", 
+     	"phase":2     
+    }, 
+    
+    {
+        "name": "Sohaj", 
+     	"phase":2        
+    }, 
+    {
+        "name": "Luxor", 
+     	"phase":2        
+    }, 
+    
+    {
+        "name": "Aswan", 
+     	"phase":2        
+    }, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "name": "Giza", 
+     	"phase":3       
+    },
+ 
+    {
+        "name": "Gharbia", 
+     	"phase":3       
+    },
+ 
+    {
+        "name": "Daqhlia", 
+     	"phase":3      
+    }, 
+
+    {
+        "name": "Sharqia", 
+     	"phase":3        
+    }, 
+
+    {
+        "name": "Damanhour", 
+     	"phase":3       
+    },
+ 
+    {
+        "name": "Menya", 
+     	"phase":3       
+    },  
+
+    {
+        "name": "Qena", 
+     	"phase":3        
+    }, 
+
+}
