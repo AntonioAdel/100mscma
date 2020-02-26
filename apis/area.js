@@ -5,7 +5,7 @@ var cityModel = require("../models/city.model");
 function areaAPIS(app) {
     // get area
     app.get("/getarea", async(req, resp) => {
-        var area = await areaModel.find({}); // async
+        var area = await AreaModel.find({}); // async
         resp.json(area);
     });
     // insert area 
@@ -22,9 +22,9 @@ function areaAPIS(app) {
 
     app.post("/getareasofcity", async(req, resp) => {
         let { city } = req.body;
-        let area = await areaModel.find({city}); // async
+        let area = await AreaModel.find({city}); // async
         resp.json(area);
-    });
+    })
 
 
 }
