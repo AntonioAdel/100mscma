@@ -22,7 +22,7 @@ function areaAPIS(app) {
 
     app.post("/getareasofcity", async(req, resp) => {
         let { city } = req.body;
-        let area = await areaModel.findOne({city}); // async
+        let area = await areaModel.find({city}); // async
         resp.json(area);
     });
 
