@@ -4,7 +4,7 @@ var cityModel = require("../models/city.model");
 function cityAPIS(app) {
     // get city
     app.get("/getcity", async(req, resp) => {
-        var city = await cityModel.find({}); // async
+        var city = await CityModel.find({}); // async
         resp.json(city);
     });
     // api insert city
