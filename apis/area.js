@@ -20,5 +20,11 @@ function areaAPIS(app) {
         resp.json({ message: 'success' });
     })
 
+    app.get("/getareasofcity", async(req, resp) => {
+        let { city } = req.body;
+        let area = await areaModel.findOne({city}); // async
+        resp.json(area);
+    });
+
 }
 module.exports = areaAPIS;
