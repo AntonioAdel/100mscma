@@ -92,7 +92,8 @@ function HospitalAPIS(app) {
 
 
 app.post("/getHospitalDetails", async (req, resp) => {
- 
+ //
+ //ssdf
   let { _id } = req.body.hos_code;
   let hospital = await HospitalModel.findOne({ _id }).populate({
     path: "medical_org",
