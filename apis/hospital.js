@@ -93,8 +93,8 @@ function HospitalAPIS(app) {
 
 app.post("/getHospitalDetails", async (req, resp) => {
  
-  let { hos_code } = req.body._id;
-  let hospital = await HospitalModel.findOne({ hos_code }).populate({
+  let { _id } = req.body.hos_code;
+  let hospital = await HospitalModel.findOne({ _id }).populate({
     path: "medical_org",
     populate: {
       path: "phone",
