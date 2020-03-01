@@ -78,7 +78,7 @@ function HospitalAPIS(app) {
 
   app.get("/hospitals", async (req, resp) => {
     //let hospitals = await HospitalModel.find({}).populate("doctors");
-    let hospitals = await HospitalModel.find({}).populate("medical_org",populate("phone"));
+    let hospitals = await HospitalModel.find({}).populate("medical_org");//.populate("phone");
     resp.json(hospitals);
   });
 }
