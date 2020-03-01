@@ -74,8 +74,7 @@ function HospitalAPIS(app) {
 
 
   app.get("/getallhospitals", async (req, resp) => {
-    //let hospitals = await HospitalModel.find({}).populate("doctors");
-    //let hospitals = await HospitalModel.find({}).populate("medical_org").populate("phone");
+
     let hospitals = await HospitalModel.find({}).populate({
       path: "medical_org",
       populate: {
@@ -87,5 +86,24 @@ function HospitalAPIS(app) {
     resp.json(hospitals);
   });
 }
+
+
+
+
+
+app.post("/getHospitalDetails", async (req, resp) => {
+ 
+  let { hos_code } = req.body;
+  let hospital = await HospitalModel.findOne({ "hospital._id":hos_code }).populate({
+    path: "medical_org",
+    populate: {
+      path: "phone",
+      model: "phone",
+    }
+  });
+  
+  resp.json(hospital);
+});
+
 
 module.exports = HospitalAPIS;
