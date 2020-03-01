@@ -48,6 +48,7 @@ function HospitalAPIS(app) {
         pic_url: pic_url,
         from: from,
         to: to,
+        address:address,
         type: type,
         phone: newPhone._id
       });
