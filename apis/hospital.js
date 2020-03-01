@@ -81,10 +81,10 @@ function HospitalAPIS(app) {
     resp.json(hospitals);
   });
 }
-
+//gjgjh
 app.post("/getHospitalDetails", async (req, resp) => {
   try {
-    let { code } = new ObjectId(req.body.hos_code);
+    let  code  = new ObjectId(req.body.hos_code);
     let hospital = await HospitalModel.findOne({"_id": code}).populate({
       path: "medical_org",
       populate: {
