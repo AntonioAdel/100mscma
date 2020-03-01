@@ -2,7 +2,6 @@ var HospitalModel = require("../models/MedicalOrganization/hospital.model");
 var MedicalOrganizationModel = require("../models/MedicalOrganization/medical.org.model");
 var PhoneModel = require("../models/common/phone.model");
 
-
 var mongoose = require("mongoose");
 
 function HospitalAPIS(app) {
@@ -33,14 +32,12 @@ function HospitalAPIS(app) {
         long
       } = req.body;
 
-
       //save phone
       let newPhone = new PhoneModel({
         _id: mongoose.Types.ObjectId(),
         phone: phone
       });
       await newPhone.save();
-
 
       //save medical organization and link phone
       let newMedicalOrg = new MedicalOrganizationModel({
@@ -49,13 +46,12 @@ function HospitalAPIS(app) {
         pic_url: pic_url,
         from: from,
         to: to,
-        address:address,
+        address: address,
         type: type,
         phone: newPhone._id
       });
       await newMedicalOrg.save();
 
-      
       //save hospital and link medical organization
       let newHospital = new HospitalModel({
         _id: mongoose.Types.ObjectId(),
@@ -66,19 +62,23 @@ function HospitalAPIS(app) {
       });
       await newHospital.save();
 
-
       resp.json({ message: "success" });
     } catch (e) {
       resp.json(e);
     }
   });
 
-
-
-
   app.get("/hospitals", async (req, resp) => {
     //let hospitals = await HospitalModel.find({}).populate("doctors");
-    let hospitals = await HospitalModel.find({}).populate("medical_org").populate("phone");
+    //let hospitals = await HospitalModel.find({}).populate("medical_org").populate("phone");
+    let hospitals = await HospitalModel.find({}).populate({
+      path: "medical_org",
+      populate: {
+        path: "phone",
+        model: "phone",
+      }
+    });
+
     resp.json(hospitals);
   });
 }
