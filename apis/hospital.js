@@ -54,6 +54,7 @@ function HospitalAPIS(app) {
       });
       await newMedicalOrg.save();
 
+      
       //save hospital and link medical organization
       let newHospital = new HospitalModel({
         _id: mongoose.Types.ObjectId(),
@@ -70,6 +71,9 @@ function HospitalAPIS(app) {
       resp.json(e);
     }
   });
+
+
+
 
   app.get("/hospitals", async (req, resp) => {
     let hospitals = await HospitalModel.find({}).populate("doctors");
