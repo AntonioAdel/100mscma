@@ -82,7 +82,6 @@ function HospitalAPIS(app) {
         model: "phone",
       }
     });
-
     resp.json(hospitals);
   });
 }
@@ -92,8 +91,8 @@ function HospitalAPIS(app) {
 
 
 app.post("/getHospitalDetails", async (req, resp) => {
- //
- //ssdf
+ 
+  try{
   let { code } = req.body.hos_code;
   let hospital = await HospitalModel.findOne({'hospital._id':code }).populate({
     path: "medical_org",
@@ -102,8 +101,13 @@ app.post("/getHospitalDetails", async (req, resp) => {
       model: "phone",
     }
   });
-  
-  resp.json(hospital);
+  resp.json({ message: 'success', hospital })
+  //resp.json(hospital);
+  }
+  catch (e) {
+    resp.json(e);
+  }
+
 });
 
 
