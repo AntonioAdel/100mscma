@@ -80,7 +80,7 @@ function HospitalAPIS(app) {
     });
     resp.json(hospitals);
   });
-}
+
 
 
 
@@ -103,7 +103,7 @@ app.post("/getHospitalDetails", async (req, resp) => {
   }
 });
 
-
+}
 
 
 module.exports = HospitalAPIS;
