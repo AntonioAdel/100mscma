@@ -55,7 +55,7 @@ function HospitalAPIS(app) {
       await newMedicalOrg.save();
 
       //save hospital and link medical organization
-      let newHospital = new MedicalOrgModel({
+      let newHospital = new HospitalModel({
         _id: mongoose.Types.ObjectId(),
         lat: lat,
         lng: long,
