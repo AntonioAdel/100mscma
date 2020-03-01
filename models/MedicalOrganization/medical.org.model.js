@@ -9,8 +9,8 @@ var MedicalOrgSchema = new mongoose.Schema({
     pic_url: String,
     type: String,
     phone: { type: mongoose.Schema.Types.ObjectId, ref: "phone" }
-})
+});
 
-var MedicalOrgModel = new mongoose.model("medicalOrg", MedicalOrgSchema)
+var MedicalOrgModel = new mongoose.model("medicalOrg", MedicalOrgSchema);
 
-module.exports = MedicalOrgModel
+module.exports = MedicalOrgModel;

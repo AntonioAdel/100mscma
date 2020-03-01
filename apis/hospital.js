@@ -1,6 +1,7 @@
 var HospitalModel = require("../models/MedicalOrganization/hospital.model");
-var HospitalModel = require("../models/MedicalOrganization/medical.org.model");
-var HospitalModel = require("../models/MedicalOrganization/hospital.model");
+var MedicalOrganizationModel = require("../models/MedicalOrganization/medical.org.model");
+var PhoneModel = require("../models/common/phone.model");
+
 
 var mongoose = require("mongoose");
 
@@ -42,7 +43,7 @@ function HospitalAPIS(app) {
 
 
       //save medical organization and link phone
-      let newMedicalOrg = new MedicalOrgModel({
+      let newMedicalOrg = new MedicalOrganizationModel({
         _id: mongoose.Types.ObjectId(),
         name: name,
         pic_url: pic_url,
