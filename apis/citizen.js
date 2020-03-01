@@ -98,12 +98,14 @@ function CitizenAPIS(app) {
     resp.json(citizen);
   });
 
+
   app.post("/getcitizenbynid", Utils.Authentication, async (req, resp) => {
     let { national_id } = req.body;
     let citizen = await CitizenModel.findOne({ national_id });
     resp.json(citizen);
   });
 
+  
   app.post('/getcitizensagerange', Utils.Authentication, async (req, resp) => {
     try {
       const { start_age, end_age } = req.body

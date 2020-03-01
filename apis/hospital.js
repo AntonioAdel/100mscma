@@ -59,7 +59,7 @@ function HospitalAPIS(app) {
         lat: lat,
         lng: long,
         capacity: capacity,
-        website:website,
+        website: website,
         medical_org: newMedicalOrg._id
       });
       await newHospital.save();
@@ -70,45 +70,33 @@ function HospitalAPIS(app) {
     }
   });
 
-
-
-
   app.get("/getallhospitals", async (req, resp) => {
-
     let hospitals = await HospitalModel.find({}).populate({
       path: "medical_org",
       populate: {
         path: "phone",
-        model: "phone",
+        model: "phone"
       }
     });
     resp.json(hospitals);
   });
 }
 
-
-
-
-
 app.post("/getHospitalDetails", async (req, resp) => {
- 
-  try{
-  let { code } = req.body.hos_code;
-  let hospital = await HospitalModel.findOne({'hospital._id':code }).populate({
-    path: "medical_org",
-    populate: {
-      path: "phone",
-      model: "phone",
-    }
-  });
-  resp.json({ message: 'success', hospital })
-  //resp.json(hospital);
-  }
-  catch (e) {
+  try {
+    let { code } = new ObjectId(req.body.hos_code);
+    let hospital = await HospitalModel.findOne({"_id": code}).populate({
+      path: "medical_org",
+      populate: {
+        path: "phone",
+        model: "phone"
+      }
+    });
+    resp.json({ message: "success", hospital });
+    //resp.json(hospital);
+  } catch (e) {
     resp.json(e);
   }
-
 });
-
 
 module.exports = HospitalAPIS;
