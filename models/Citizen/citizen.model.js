@@ -24,7 +24,6 @@ var CitizenSchema = new mongoose.Schema({
 });
 
 
-
 // create model of schema to be enabled to do any query
 var CitizenModel = new mongoose.model("citizen", CitizenSchema);
 CitizenSchema.plugin(uniqueNidValidator, {message: 'nidExists'});
