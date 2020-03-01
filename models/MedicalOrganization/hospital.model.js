@@ -5,6 +5,7 @@ var HospitalSchema = new mongoose.Schema({
   lat: Number,
   lng: Number,
   capacity: Number,
+  website: String,
   medical_org: { type: mongoose.Schema.Types.ObjectId, ref: "medicalOrg" },
  // doctors: [{ type: mongoose.Schema.Types.ObjectId, ref: "doctor" }],
 

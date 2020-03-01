@@ -28,6 +28,7 @@ function HospitalAPIS(app) {
         phone,
         type,
         capacity,
+        website,
         lat,
         long
       } = req.body;
@@ -58,6 +59,7 @@ function HospitalAPIS(app) {
         lat: lat,
         lng: long,
         capacity: capacity,
+        website:website,
         medical_org: newMedicalOrg._id
       });
       await newHospital.save();
@@ -68,7 +70,10 @@ function HospitalAPIS(app) {
     }
   });
 
-  app.get("/hospitals", async (req, resp) => {
+
+
+
+  app.get("/getallhospitals", async (req, resp) => {
     //let hospitals = await HospitalModel.find({}).populate("doctors");
     //let hospitals = await HospitalModel.find({}).populate("medical_org").populate("phone");
     let hospitals = await HospitalModel.find({}).populate({
