@@ -87,7 +87,8 @@ function HospitalAPIS(app) {
 
 
   app.get("/getallhospitals", async (req, resp) => {
-    let hospitals = await HospitalModel.find({}).project({ _id : true, /*serialno : 1*/ }).populate("medical_org").project({ _id : true, name:true, address:true, pic_url:true });
+    let hospitals = await HospitalModel.find({}).project({ _id : true, /*serialno : 1*/ }).populate("medical_org");
+    //.project({ _id : true, name:true, address:true, pic_url:true });
     resp.json(hospitals);
   });
 
