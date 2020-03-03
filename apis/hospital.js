@@ -85,8 +85,28 @@ function HospitalAPIS(app) {
 
 
 
+  app.post("/getHospitalDetailsByMedicalCode", async (req, resp) => {
+    try {
+      let code  = req.body.hos_code;
+      let hospital = await HospitalModel.findById({"medical_org": code}).populate({
+        path: "medical_org",
+        populate: { 
+          path: "phone",
+          model: "phone"
+        }
+      });
+      resp.json({ message: "success", hospital });
+      //resp.json(hospital);
+    } catch (e) {
+      resp.json(e);
+    }
+  });
+  
+  
 
-app.post("/getHospitalDetails", async (req, resp) => {
+  
+
+app.post("/getHospitalDetailsByID", async (req, resp) => {
   try {
     let code  = req.body.hos_code;
     let hospital = await HospitalModel.findById({"_id": code}).populate({
