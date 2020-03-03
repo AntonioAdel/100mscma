@@ -16,6 +16,9 @@ var DoctorAPIS = require('./apis/doctor')
 var AddressAPIS = require('./apis/commonAPI/address.api')
 var HospitalAPIS = require('./apis/hospital')
 
+var MedicalOrgAPIS = require('./apis/medical_organization')
+
+
 var cors = require('cors')
 var session = require('express-session')
 var uuid = require("uuid/v4")
@@ -41,6 +44,7 @@ CitizenAPIS(app)
 DoctorAPIS(app)
 HospitalAPIS(app)
 AddressAPIS(app)
+MedicalOrgAPIS(app)
 
 // awl api or awl endpoint
 app.get("/", (req, resp) => {
